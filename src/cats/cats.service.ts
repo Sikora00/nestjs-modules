@@ -5,6 +5,23 @@ import { Cat } from './interfaces/cat.interface';
 export class CatsService {
   private readonly cats: Cat[] = [];
 
+  constructor(private catsRepository: CatsRepository, private clientService: ClientService) {}
+
+  adopt(cat: Cat, clinetId: number) {
+    if(!this.clientService.canAdpot(clientId)) {
+      throw new Error(`This person can't adpot a cat`);
+    }
+
+    // The rest of logic needed to adpot a cat
+  }
+
+  remove(catId: number) {
+    const cat = this.catsRepository.findOne(catId)
+    this.clientService.disallowToAdpot(cat.ownerId);
+
+    // The rest of logic needed to adpot a cat
+  }
+
   create(cat: Cat) {
 
 
@@ -14,14 +31,6 @@ export class CatsService {
   }
 
   update(cat: Cat) {
-
-
-
-
-
-  }
-
-  remove(catId: number) {
 
 
 
@@ -43,14 +52,6 @@ export class CatsService {
 
 
     return this.cats[0]
-  }
-
-  adopt(cat: Cat, clinetId: number) {
-
-
-
-
-
   }
 
   return(cat: Cat) {
