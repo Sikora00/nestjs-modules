@@ -1,0 +1,27 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@nx/cats": ["libs/cats/src/index.ts"],
+      "@nx/clients": ["libs/clients/src/index.ts"],
+      "@nx/charity-work": ["libs/charity-work/src/index.ts"],
+      "@nx/budget": ["libs/budget/src/index.ts"],
+      "@nx/adoption": ["libs/adoption/src/index.ts"],
+      "@nx/verification": ["libs/verification/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}
